@@ -1,0 +1,36 @@
+1. Change L5_ofdm_bit_adapt.c and L5_ofdm_power_adapt. Put your code between: 
+	
+	//***Student_code_start*** 
+	//    Your code...
+	//    ...
+        //    ...
+	//***Student_code_end*****
+
+   Don't change other code.
+
+2. You need to write following functions:
+
+	int bit_allocation(int bitAlloc[], double gamma[], int numCarriers,
+		double snrAvg, int modBitsPerSym[], double snrTh[], int numMods)
+		
+	int power_allocation(double powAlloc[], double gamma[], int numCarriers, double sqrtSNR)
+
+
+3. Please make sure you have the latest version of "gcc"
+
+4. Compile with command line:
+	make
+
+5. Excute with command line.
+	./L5_ofdm_bit_adapt 8 5000 
+	
+	or 
+	
+	./L5_ofdm_power_adapt 8 5000
+	
+   E.g.:  5000 is blocknumber, more takes more time but more accurated. 8 is number of taps of frequency-selective fading.
+   Your result will store in a .txt file in /result.
+
+6. Plot your graph with Python script in /result/plot_bit_ber_and_throughput.py  or /result/plot_power_ber_and_throughput.py
+	
+
