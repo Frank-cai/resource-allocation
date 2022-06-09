@@ -72,6 +72,12 @@ void generate_symbol_256qam(unsigned char* bits, double* symbol_I, double* symbo
 int generate_asymbol(unsigned char* bits, int len, double* symbol_I, double* symbol_Q);
 int generate_symbols(unsigned char* txBits, int bitsPerSymbol, int howManySymbols, 
         double* txSymI, double* txSymQ);
+void generate_symbols_ra(unsigned char txBits[], int bitsPerSymbol[], int numSymbols,
+        double txSymI[], double txSymQ[]);
+
+int bit_allocation(int bitAlloc[], double gamma[], int numCarriers,
+        double snrAvg, int modBitsPerSym[], double snrTh[], int numMods); 
+int power_allocation(double powAlloc[], double gamma[], int numCarriers, double sqrtSNR);
 
 
 // CHANNEL
@@ -150,6 +156,8 @@ int decode_asymbol(double* recSymI, double* recSymQ,
         unsigned char* recBits, int bitsPerSymbol); 
 void decode_symbols(double* rxSymI, double* rxSymQ, int howManySymbols,
         int bitsPerSymbol, unsigned char* rxBits);
+void decode_symbols_ra(double rxSymI[], double rxSymQ[], int numSymbols,
+        int bitsPerSymbol[], unsigned char rxBits[]);
 
 // UTILITY FUNCTIONS
 int save_asignal(double* t, double* signal, int len, char* fileName);

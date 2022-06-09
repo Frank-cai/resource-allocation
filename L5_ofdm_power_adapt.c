@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
 
 
     // power correction factor due to due to GI insertion (for SNR from/to EbNo conversion)
-    double cpLoss = (double) SYMBOLS_PER_BLOCK / (SYMBOLS_PER_BLOCK + CP_LEN);
+    //double cpLoss = (double) SYMBOLS_PER_BLOCK / (SYMBOLS_PER_BLOCK + CP_LEN);
  
 
     // arrays to keep SNR in linear domain (and its square root)
